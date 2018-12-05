@@ -16,22 +16,27 @@
 */
 
 
-/* Import Basic Design Styles  */
+/* Import Basic Design Styles */
 @import url(cw_designs.css);
 
 /* ===============================
 	General Styles for All Devices
    ===============================
 */
+
+/* This style displays the bottom navigation menu as a flexbox and sets the flex flow to row with no wrapping, also aligns the content along the center of the main axis. */
 nav#bottom {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
+    -webkit-justify-content: center;
     justify-content: center;
 }
 
+/* This style gives the bottom navigation menu a flex grow of 1, a flex shrink of 1, and a flex basis of 150 pixels. */
 nav#bottom ul {
+    -webkit-flex: 1 1 150px;
     flex: 1 1 150px;
 }
 
@@ -40,18 +45,24 @@ nav#bottom ul {
 	Mobile Styles up to 480 pixels
    ===============================
 */
+
+/* This is a media query for mobile devices with a width no greater than 480 pixels. */
 @media only screen and (max-width: 480px) {
+
+    /* This style sets the text color of the page body to a light gray and sets the background color of the body to a black-ish color. */
     body {
         color: rgb(211, 211, 211);
         background-color: rgb(51, 51, 51);
     }
 
+    /* This style hides the aside elements, article images, and the spotlight section from mobile devices. */
     aside,
     article img,
     section#spotlight {
         display: none;
     }
 
+    /* This style displays the top navigation list as a flexbox and sets the flex flow to be row oriented with wrapping. */
     nav#top ul {
         display: -webkit-flex;
         display: flex;
@@ -59,12 +70,14 @@ nav#bottom ul {
         flex-flow: row wrap;
     }
 
+    /* This style sets the font size of list items within the top navigation list to 2.2em with a flex growth and flex shrink of 1 and a basis of 130 pixels. */
     nav#top ul li {
         font-size: 2.2em;
         -webkit-flex: 1 1 130px;
         flex: 1 1 130px;
     }
 
+    /* These styles place background images within each list item of the top navigation list and format the images to have no tiling, to cover the whole background size, and to position them in the center of the background, all with a width of 100%. */
     nav#top ul li:nth-of-type(1) {
         background-image: url(cw_image01.png);
         background-repeat: no-repeat;
@@ -113,13 +126,17 @@ nav#bottom ul {
         width: 100%;
     }
 
+    /* This style displays the links paragraph as a flexbox with a flex flow of row oriented with no wrapping and set to distribute the items evenly along the main axis with equal space between them and the ends of the flexbox. */
     p#links {
         display: -webkit-flex;
         display: flex;
+        -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
+        -webkit-justify-content: space-around;
         justify-content: space-around;
     }
 
+    /* This style affects hypertext within the links paragraph to change the text color to white, set the background color to a red-ish, give the links a border radius of 20 pixels, remove the underlining, and give the links 10 pixels of padding. */
     p#links a {
         color: white;
         background-color: rgb(220, 27, 27);
@@ -133,7 +150,11 @@ nav#bottom ul {
 	Tablet and Desktop Devices: 481px or more 
    ============================================
 */
+
+/* This is a media query for tablet and desktop devices no less than 481 pixels wide. */
 @media only screen and (min-width: 481px) {
+
+    /* This style display the page body as a flexbox with a flex flow of row with wrapping. */
     body {
         display: -webkit-flex;
         display: flex;
@@ -141,25 +162,21 @@ nav#bottom ul {
         flex-flow: row wrap;
     }
 
+    /* This style gives the article a flex growth of 2, flex shrink of 1, and a flex basis of 400 pixels. */
     article {
         -webkit-flex: 2 1 400px;
         flex: 2 1 400px;
     }
 
+    /* This style gives the aside element a flex growth of 1, flex shrink of 2, and a flex basis of 200 pixels. */
     aside {
         -webkit-flex: 1 2 200px;
         flex: 1 2 200px;
     }
 
-    /* nav#top {
-        -webkit-display: flex;
-        display: flex;
-        -webkit-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    } */
-
+    /* This style gives the top navigation list a background color of black, a height of 50 pixels, and displays the list as a flexbox and aligns the flex items along the center of the main axis and cross axis. */
     nav#top ul {
-        -webkit-display: flex;
+        display: -webkit-flex;
         display: flex;
         background-color: rgb(51, 51, 51);
         height: 50px;
@@ -169,11 +186,13 @@ nav#bottom ul {
         align-items: center;
     }
 
+    /* This style affects list items within the top navigation list to give them a flex growth of 0, flex shrink of 1, and a flex basis of 80 pixels. */
     nav#top ul li {
         -webkit-flex: 0 1 80px;
         flex: 0 1 80px;
     }
 
+    /* This style hides the links paragraph from tablet and desktop devices. */
     p#links {
         display: none;
     }
