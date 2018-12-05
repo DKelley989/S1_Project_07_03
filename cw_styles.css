@@ -52,14 +52,14 @@ nav#bottom ul {
         display: none;
     }
 
-    nav.top ul {
+    nav#top ul {
         display: -webkit-flex;
         display: flex;
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
     }
 
-    nav.top ul li {
+    nav#top ul li {
         font-size: 2.2em;
         -webkit-flex: 1 1 130px;
         flex: 1 1 130px;
